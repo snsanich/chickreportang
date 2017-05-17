@@ -1,3 +1,65 @@
-<h1>
-  {{title}}
-</h1>
+<div class="summary-panel">
+  <svg class="history-graph" viewBox="0 0 200 200">
+    <svg:path *ngIf="lineChartPoints" [attr.d]="drawLineChart(lineChartPoints, 2, 2)" stroke="white" fill="transparent" stroke-width="3"
+    />
+  </svg>
+  <div class="history-graph-title">
+    Past {{maxNumberOfWeeks}} weeks
+  </div>
+  <svg class="future-graph" viewBox="0 0 200 200">
+    <svg:line *ngIf="lineChartUp" stroke-dasharray="5, 10" x1="0" x2="200" [attr.y1]="lineChartUp.from" [attr.y2]="lineChartUp.to"
+      stroke-width="3" stroke="white" stroke-width="2" />
+    <svg:line *ngIf="lineChartDown" stroke-dasharray="5, 10" x1="0" x2="200" [attr.y1]="lineChartDown.from" [attr.y2]="lineChartDown.to"
+      stroke-width="3" stroke="white" stroke-width="2" />
+  </svg>
+  <div class="future-graph-title">
+    Next {{maxNumberOfWeeks}} weeks
+  </div>
+  <table class="avg-stats">
+    <tbody *ngIf="quantiles">
+      <tr>
+        <th>High</th>
+        <td>{{quantiles[75]}}</td>
+      </tr>
+      <tr>
+        <th>Avg</th>
+        <td>{{quantiles[50]}}</td>
+      </tr>
+      <tr>
+        <th>Low</th>
+        <td>{{quantiles[25]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="quantileChangeInPercent > 0" class="avg-stats-summary">
+    upside %{{quantileChangeInPercent}}
+  </div>
+  <div *ngIf="quantileChangeInPercent < 0" class="avg-stats-summary">
+    downside %{{quantileChangeInPercent * -1}}
+  </div>
+  <svg class="pie-chart" viewBox="-1 -1 2 2" style="transform: rotate(-0.90deg)">
+    <svg:path *ngFor="let path of generatePieChartPaths(dietProportions)" [attr.fill]="path.fill" [attr.d]="path.d"></svg:path>
+  </svg>
+</div>
+<table class="chick-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>chick</th>
+      <th>diet</th>
+      <th>weight</th>
+      <th>income</th>
+      <th>last viewed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of records">
+      <th>{{item.id}}</th>
+      <th>{{item.chick}}</th>
+      <th>{{item.diet}}</th>
+      <th>£{{item.weight}}</th>
+      <th>£{{item.income}}</th>
+      <th>{{item.updated | relativeDate}}</th>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,91 @@
+body {
+    padding-top: 29px;
+}
+
+.history-graph {
+    margin-left: 39px;
+    height: 204px;
+    width: 204px;
+    background-color: rgba(216, 216, 216, 1);
+    border: 1px solid rgba(151, 151, 151, 1);
+}
+
+.history-graph-title {
+    margin-left: 50px;
+    height: 33px;
+    width: 193px;
+    font-family: 'AvenirNext-Bold';
+    font-size: 24px;
+    color: rgba(74, 74, 74, 1);
+    text-align: left;
+
+}
+
+.future-graph {
+    margin-top: 13px;
+    margin-left: 39px;
+    height: 204px;
+    width: 204px;
+    background-color: rgba(216, 216, 216, 1);
+    border: 1px solid rgba(151, 151, 151, 1);
+
+}
+
+.future-graph-title {
+    margin-left: 50px;
+    height: 33px;
+    width: 193px;
+    font-family: 'AvenirNext-Bold';
+    font-size: 24px;
+    color: rgba(74, 74, 74, 1);
+    text-align: left;
+}
+
+.avg-stats {
+    margin-top: 13px;
+    margin-left: 39px;
+    height: 176px;
+    width: 204px;
+    background-color: rgba(223, 223, 223, 1);
+    border: 1px solid rgba(151, 151, 151, 1);
+}
+
+.avg-stats-summary {
+    margin-left: 30px;
+    height: 33px;
+    width: 222px;
+    color: rgba(74, 74, 74, 1);
+    text-align: center;
+}
+
+.pie-chart {
+    margin-top: 13px;
+    margin-left: 48px;
+    height: 173px;
+    width: 173px;
+    border: 1px solid rgba(151, 151, 151, 1);
+    border-radius: 173px;
+    transform: rotate(-0.25turn);
+    margin-bottom: 26px;
+}
+
+.summary-panel {
+    float: left;
+    margin-right: 39px;
+}
+
+.chick-table {
+    background-color: rgba(216, 216, 216, 1);
+    border: 1px solid rgba(151, 151, 151, 1);
+}
+
+.chick-table tr {
+    background-color: rgba(184, 184, 184, 1);
+}
+.chick-table thead th {
+    background-color: rgba(172, 172, 172, 1);
+}
+.chick-table td, .chick-table th {
+    width: 157px;
+    color: white;
+}
