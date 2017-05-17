@@ -9,8 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:aot": "ng build --prod",
-    "serve:aot": "php -ddoc.root=docs -S localhost:4201 -t ./docs/"
+    "serve:prod": "php -ddoc.root=docs -S localhost:4201 -t ./docs/",
+    "clean:gh-pages": "rm -f `ls docs`",
+    "build:gh-pages": "npm run clean:gh-pages && ng build --prod && cp docs/* ."
   },
   "private": true,
   "dependencies": {
