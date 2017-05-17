@@ -11,7 +11,7 @@
     "e2e": "ng e2e",
     "serve:prod": "php -ddoc.root=docs -S localhost:4201 -t ./docs/",
     "clean:gh-pages": "rm -f `ls docs`",
-    "build:gh-pages": "npm run clean:gh-pages && ng build --prod && cp docs/* ."
+    "build:gh-pages": "npm run clean:gh-pages && ng build --prod -bh=https://snsanich.github.io/chickreportang/ && cp docs/* ."
   },
   "private": true,
   "dependencies": {
